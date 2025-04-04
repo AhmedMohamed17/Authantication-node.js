@@ -26,7 +26,7 @@ const register = async (req, res) => {
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: "8" }
+    { expiresIn: "18d" }
   );
   const refreshToken = jwt.sign(
     {
@@ -35,7 +35,7 @@ const register = async (req, res) => {
       },
     },
     process.env.REFRESH_TOKEN_SECRET,
-    { expiresIn: "7d" }
+    { expiresIn: "17d" }
   );
   res.cookie("jwt", refreshToken, {
     httpOnly: true,
@@ -71,7 +71,7 @@ const login = async (req, res) => {
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: "8" }
+    { expiresIn: "18d" }
   );
   const refreshToken = jwt.sign(
     {
@@ -80,7 +80,7 @@ const login = async (req, res) => {
       },
     },
     process.env.REFRESH_TOKEN_SECRET,
-    { expiresIn: "7d" }
+    { expiresIn: "17d" }
   );
   res.cookie("jwt", refreshToken, {
     httpOnly: true,
@@ -117,7 +117,7 @@ const refresh = (req, res) => {
           },
         },
         process.env.ACCESS_TOKEN_SECRET,
-        { expiresIn: "15m" }
+        { expiresIn: "12d" }
       );
       res.json({ accessToken });
     }
