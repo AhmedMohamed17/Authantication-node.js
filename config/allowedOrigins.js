@@ -1,6 +1,6 @@
 const allowedOrigins = [
-  "http://localhost:3000", // تطوير محلي
-  "https://yourfrontend.vercel.app", // التطبيق على Vercel
+  "http://localhost:3000",
+  "https://yourfrontend.vercel.app",
 ];
 
 module.exports = allowedOrigins;

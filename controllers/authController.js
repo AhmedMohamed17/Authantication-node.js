@@ -51,7 +51,9 @@ const register = async (req, res) => {
       last_name: user.last_name,
     });
   } catch (err) {
-    res.status(404).json({ message: `error = ${err}` });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: err.message });
   }
 };
 const login = async (req, res) => {
@@ -98,7 +100,9 @@ const login = async (req, res) => {
       email: foundUser.email,
     });
   } catch (err) {
-    res.status(404).json({ message: `error = ${err}` });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: err.message });
   }
 };
 
@@ -133,7 +137,9 @@ const refresh = (req, res) => {
       }
     );
   } catch (err) {
-    res.status(404).json({ message: `error = ${err}` });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: err.message });
   }
 };
 
@@ -150,7 +156,9 @@ const logout = (req, res) => {
     });
     res.json({ message: "cookie is cleared " });
   } catch (err) {
-    res.status(404).json({ message: `error = ${err}` });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: err.message });
   }
 };
 module.exports = {
