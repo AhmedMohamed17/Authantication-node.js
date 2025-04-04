@@ -9,10 +9,7 @@
      "build": "npm install --production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/server.js" }
-  ],
+ 
   
   "keywords": [],
   "author": "",
