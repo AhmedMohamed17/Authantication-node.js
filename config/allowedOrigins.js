@@ -1,6 +1,6 @@
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://yourfrontend.vercel.app",
+  "https://authantication-node-js.vercel.app",
 ];
 
 module.exports = allowedOrigins;
